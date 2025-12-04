@@ -1,53 +1,11 @@
 import { useState } from "react";
 import "../Styles/styles.css";
+import { proyectos } from "../data/casas.js";
+import Card from "../Components/CardsPaginas.jsx";
 
 function Proyectos() {
   const [selected, setSelected] = useState(null);
   const [zoomedImage, setZoomedImage] = useState(null);
-
-  const proyectos = [
-    {
-      id: 1,
-      titulo: "Casa",
-      titulo2: "Estilo Mediterráneo",
-      imagen: [
-        "/img/CasaMediterranea.jpg",
-        "/img/CasaMediterranea2.jpg",
-        "/img/CasaMediterranea3.jpg",
-      ],
-      descripcion: [
-        "Muros blancos o en tonos cálidos que aportan frescura.",
-        "Techos de tejas de arcilla o terracota con aire rústico.",
-        "Amplios ventanales y terrazas con conexión interior-exterior.",
-        "Materiales nobles como madera, piedra y cerámica.",
-        "Diseño orientado a ventilación cruzada y luz natural.",
-      ],
-    },
-    {
-      id: 2,
-      titulo: "Casa",
-      titulo2: "Moderna Urbana",
-      imagen: ["/img/Moderna.jpg", "/img/Moderna2.jpg", "/img/Moderna3.jpg"],
-      descripcion: [
-        "Diseño minimalista con líneas limpias y techos planos.",
-        "Grandes ventanales para aprovechar la luz natural.",
-        "Uso de hormigón, vidrio y acero como materiales principales.",
-        "Espacios integrados que maximizan la funcionalidad.",
-      ],
-    },
-    {
-      id: 3,
-      titulo: "Casa",
-      titulo2: "Sureña/Social",
-      imagen: ["/img/Sureña.jpg", "/img/Sureña2.jpg", "/img/Sureña3.jpg"],
-      descripcion: [
-        "Inspiración en la arquitectura del sur de Chile.",
-        "Materiales locales: madera nativa, piedra y teja.",
-        "Espacios cálidos con chimenea central.",
-        "Diseño pensado para el clima frío y lluvioso.",
-      ],
-    },
-  ];
 
   return (
     <>
@@ -59,7 +17,7 @@ function Proyectos() {
           Tipos de{" "}
           <span className="text-6xl font-bold uppercase text-center text-gray-800">
             {" "}
-            Cocinas
+            Casas
           </span>
           <span className="block mt-8 w-[15%] h-1 bg-gradient-to-r from-orange-500 to-yellow-400 mx-auto rounded-full"></span>
         </h2>
@@ -70,34 +28,16 @@ function Proyectos() {
           className="flex flex-col py-16 md:flex-row justify-center flex-wrap gap-16"
           data-aos="fade-up"
         >
-          {proyectos.map((p) => (
-            <div key={p.id} className="text-center group">
-              <h3 className="text-3xl uppercase mb-4 text-gray-800">
-                {p.titulo}
-                <p className="text-3xl py-4 font-bold mb-4 text-gray-800">
-                  {p.titulo2}
-                  <span className="block w-[25%] h-1 bg-gradient-to-r from-orange-500 to-yellow-400 mx-auto mt-8 mb-4 rounded-full"></span>
-                </p>
-              </h3>
-              <div className="w-96 h-96 mx-auto overflow-hidden shadow-gray-600 shadow-lg transition-transform duration-500 group-hover:scale-110">
-                <img
-                  src={p.imagen[0]}
-                  alt={p.titulo2}
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-
-              <button
-                onClick={() => {
-                  setSelected(p);
-                }}
-                className="mt-8 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition"
-              >
-                Ver Más
-              </button>
-            </div>
-          ))}
-        </div>
+          {proyectos.map((servicio) => (
+          <Card
+            key={servicio.id}
+            titulo={servicio.titulo}
+            subtitulo={servicio.titulo2}
+            imagen={servicio.imagen}
+            onClick={() => setSelected(servicio)}
+          />
+        ))}
+      </div>
 
         {/* Modal*/}
         {selected && (

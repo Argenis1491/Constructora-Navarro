@@ -5,7 +5,7 @@ function Header() {
     <>
       <AdminNav data-aos="fade-up"/>
 
-      <header className="relative w-full h-[150vh] md:h-[100vh] flex items-center justify-center" id="/">
+      <header className="relative w-full h-[150vh] md:h-[100vh] flex items-center justify-center" id="inicio">
         {/*Imagen de fondo */}
         <img
           src="/Constructora Navarro2.jpg"
