@@ -3,7 +3,7 @@ export const ampliaciones = [
     id: 1,
     titulo: "",
     titulo2: "Quinchos",
-    imagen: ["/img/quincho.jpg", "/img/quincho2.jpg", "/img/quincho3.jpg"],
+    imagen: ["/imgWebp/quincho.webp", "/imgWebp/quincho2.webp", "/imgWebp/quincho3.webp"],
     descripcion: [
       "Diseñamos y construimos quinchos personalizados, integrando materiales resistentes como piedra, hormigón y madera nativa para lograr un estilo armónico con el entorno.",
       "Cada espacio se adapta a las necesidades del cliente, priorizando funcionalidad, comodidad y estética moderna.",

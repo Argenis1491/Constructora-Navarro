@@ -1,13 +1,23 @@
+import Metatags from "../Components/Metatags.jsx";
 import { useState } from "react";
 import { ampliaciones } from "../data/ampliaciones.js";
 import Card from "../Components/CardsPaginas.jsx";
+import useModal from "../hooks/useModal.js";
 
 function Ampliaciones() {
   const [selected, setSelected] = useState(null);
   const [zoomedImage, setZoomedImage] = useState(null);
 
+  useModal(selected !== null, () => setSelected(null));
+
   return (
     <>
+      <Metatags
+        title="Ampliaciones | Constructora Navarro – Casas, Obras y Remodelaciones"
+        description="Descubre nuestras ampliaciones residenciales y comerciales. Constructora Navarro ofrece soluciones personalizadas para expandir y mejorar tus espacios en Chile."
+        path="/ampliaciones"
+        image="/og-ampliaciones.jpg"
+      />
       <div className="bg-gray-100 py-16 px-6">
         <h2
           className="text-6xl uppercase mb-8 text-center text-gray-800"
@@ -27,15 +37,15 @@ function Ampliaciones() {
           data-aos="fade-up"
         >
           {ampliaciones.map((servicio) => (
-          <Card
-            key={servicio.id}
-            titulo={servicio.titulo}
-            subtitulo={servicio.titulo2}
-            imagen={servicio.imagen}
-            onClick={() => setSelected(servicio)}
-          />
-        ))}
-      </div>
+            <Card
+              key={servicio.id}
+              titulo={servicio.titulo}
+              subtitulo={servicio.titulo2}
+              imagen={servicio.imagen}
+              onClick={() => setSelected(servicio)}
+            />
+          ))}
+        </div>
 
         {/* Modal*/}
         {selected && (
@@ -67,6 +77,7 @@ function Ampliaciones() {
                     key={i}
                     src={img}
                     alt={`${selected.titulo} ${i + 1}`}
+                    loading="lazy"
                     className="w-52 h-52 object-cover rounded-lg shadow-md transform transition-transform duration-500 hover:scale-105"
                     onClick={() => setZoomedImage(img)}
                   />

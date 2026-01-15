@@ -5,9 +5,9 @@ export const cocinas = [
       titulo: "",
       titulo2: "Americana",
       imagen: [
-        "/img/cocinaAmericana.jpg",
-        "/img/cocinaAmericana2.jpg",
-        "/img/cocinaAmericana3.jpg",
+        "/imgWebp/cocinaAmericana.webp",
+        "/imgWebp/cocinaAmericana2.webp",
+        "/imgWebp/cocinaAmericana3.webp",
       ],
       descripcion: [
         "Diseño abierto que integra cocina, comedor y sala en un solo ambiente, fomentando la interacción familiar y social.",
@@ -22,9 +22,9 @@ export const cocinas = [
       titulo: "",
       titulo2: "Moderna",
       imagen: [
-        "/img/cocinaModerna.jpg",
-        "/img/cocinaModerna2.jpg",
-        "/img/cocinaModerna3.jpg",
+        "/imgWebp/cocinaModerna.webp",
+        "/imgWebp/cocinaModerna2.webp",
+        "/imgWebp/cocinaModerna3.webp",
       ],
       descripcion: [
         "Líneas limpias, minimalismo y equilibrio entre funcionalidad y estética.",
@@ -39,9 +39,9 @@ export const cocinas = [
       titulo: "",
       titulo2: "Sureña",
       imagen: [
-        "/img/cocinaSureña.jpg",
-        "/img/cocinaSureña2.jpg",
-        "/img/cocinaSureña3.jpg",
+        "/imgWebp/cocinaSureña.webp",
+        "/imgWebp/cocinaSureña2.webp",
+        "/imgWebp/cocinaSureña3.webp",
       ],
       descripcion: [
         "Inspirada en las viviendas del sur de Chile, esta cocina refleja calidez, tradición y funcionalidad moderna.",

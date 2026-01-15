@@ -1,14 +1,24 @@
+import Metatags from "../Components/Metatags.jsx";
 import { useState } from "react";
 import "../Styles/styles.css";
 import { cocinas } from "../data/cocinas.js";
 import Card from "../Components/CardsPaginas.jsx";
+import useModal from "../hooks/useModal.js";
 
 function Cocinas() {
   const [selected, setSelected] = useState(null);
   const [zoomedImage, setZoomedImage] = useState(null);
 
+  useModal(selected !== null, () => setSelected(null));
+
   return (
     <>
+      <Metatags
+        title="Cocinas | Constructora Navarro – Casas, Obras y Remodelaciones"
+        description="Explora nuestra galería de cocinas diseñadas y remodeladas por Constructora Navarro. Inspírate con estilos modernos y funcionales para tu hogar en Chile."
+        path="/cocinas"
+        image="/og-cocinas.jpg"
+      />
       <div className="bg-gray-100 py-16 px-6">
         <h2
           className="text-6xl uppercase mb-8 text-center text-gray-800"
@@ -68,7 +78,8 @@ function Cocinas() {
                   <img
                     key={i}
                     src={img}
-                    alt={`${selected.titulo} ${i + 1}`}
+                    alt={`${selected.titulo} - imagen ${i + 1}`}
+                    loading="lazy"
                     className="w-52 h-52 object-cover rounded-lg shadow-md transform transition-transform duration-500 hover:scale-105"
                     onClick={() => setZoomedImage(img)}
                   />

@@ -4,9 +4,9 @@ export const proyectos = [
       titulo: "Casa",
       titulo2: "Estilo Mediterráneo",
       imagen: [
-        "/img/CasaMediterranea.jpg",
-        "/img/CasaMediterranea2.jpg",
-        "/img/CasaMediterranea3.jpg",
+        "/imgWebp/CasaMediterranea.webp",
+        "/imgWebp/CasaMediterranea2.webp",
+        "/imgWebp/CasaMediterranea3.webp",
       ],
       descripcion: [
         "Muros blancos o en tonos cálidos que aportan frescura.",
@@ -20,7 +20,7 @@ export const proyectos = [
       id: 2,
       titulo: "Casa",
       titulo2: "Moderna Urbana",
-      imagen: ["/img/Moderna.jpg", "/img/Moderna2.jpg", "/img/Moderna3.jpg"],
+      imagen: ["/imgWebp/Moderna.webp", "/imgWebp/Moderna2.webp", "/imgWebp/Moderna3.webp"],
       descripcion: [
         "Diseño minimalista con líneas limpias y techos planos.",
         "Grandes ventanales para aprovechar la luz natural.",
@@ -32,7 +32,7 @@ export const proyectos = [
       id: 3,
       titulo: "Casa",
       titulo2: "Sureña/Social",
-      imagen: ["/img/Sureña.jpg", "/img/Sureña2.jpg", "/img/Sureña3.jpg"],
+      imagen: ["/imgWebp/Sureña.webp", "/imgWebp/Sureña2.webp", "/imgWebp/Sureña3.webp"],
       descripcion: [
         "Inspiración en la arquitectura del sur de Chile.",
         "Materiales locales: madera nativa, piedra y teja.",

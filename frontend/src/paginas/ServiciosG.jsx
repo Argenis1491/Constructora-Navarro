@@ -1,13 +1,23 @@
+import Metatags from "../Components/Metatags.jsx";
 import { useState } from "react";
 import { servicios } from "../data/servicios.js";
 import Card from "../Components/CardsPaginas.jsx";  
+import useModal from "../hooks/useModal.js";
 
 function Servicios() {
   const [selected, setSelected] = useState(null);
   const [zoomedImage, setZoomedImage] = useState(null);
 
+   useModal(selected !== null, () => setSelected(null));
+
   return (
     <>
+      <Metatags
+        title="Servicios Generales | Constructora Navarro – Casas, Obras y Remodelaciones"
+        description="Descubre los servicios generales ofrecidos por Constructora Navarro. Soluciones integrales en construcción, remodelación y ampliación de viviendas en Chile."
+        path="/servicios"
+        image="/og-servicios.jpg"
+      />
       <div className="bg-gray-100 py-16 px-6">
         <h2
           className="text-6xl uppercase mb-8 text-center text-gray-800"
@@ -47,10 +57,13 @@ function Servicios() {
             <div
               className="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl p-8 relative mx-4 animate-fadeIn"
               onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
             >
               <button
                 onClick={() => setSelected(null)}
                 className="absolute top-4 right-4 font-bold text-gray-600 hover:text-gray-800 text-xl"
+                aria-label="Cerrar ventana"
               >
                 ✕
               </button>
@@ -66,7 +79,8 @@ function Servicios() {
                   <img
                     key={i}
                     src={img}
-                    alt={`${selected.titulo} ${i + 1}`}
+                    alt={`${selected.titulo} - imagen ${i + 1}`}
+                    loading="lazy"
                     className="w-52 h-52 object-cover rounded-lg shadow-md transform transition-transform duration-500 hover:scale-105"
                     onClick={() => setZoomedImage(img)}
                   />

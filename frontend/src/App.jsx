@@ -4,7 +4,7 @@ import ScrollToTop from "./Components/scrollTop";
 import Whatsapp from "./Components/whatsappButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import MetaTags from "./Components/Metatags";
 import RutaProtegida from "./layout/RutaProtegida";
 import InicioLayout from "./layout/InicioLayout";
 
@@ -26,25 +26,34 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<InicioLayout />}>
-          <Route index element={<Inicio />} />
-        </Route>
+    <>
+      <MetaTags
+        title="Constructora Navarro"
+        description="Remodelaciones, ampliaciones y obras civiles en Chile."
+        path="/"
+        image="/images/og-default.jpg"
+      />
 
-        <Route path="/" element={<RutaProtegida />}>
-          <Route path="proyectos" element={<Proyectos />} />
-          <Route path="cocinas" element={<Cocinas />} />
-          <Route path="cotiza" element={<Cotizar />} />
-          <Route path="ampliaciones" element={<Ampliaciones />} />
-          <Route path="servicios" element={<Servicios />} />
-          <Route path="contacto" element={<Contacto />} />
-        </Route>
-      </Routes>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<InicioLayout />}>
+            <Route index element={<Inicio />} />
+          </Route>
 
-      <Whatsapp />
-    </BrowserRouter>
+          <Route path="/" element={<RutaProtegida />}>
+            <Route path="proyectos" element={<Proyectos />} />
+            <Route path="cocinas" element={<Cocinas />} />
+            <Route path="cotiza" element={<Cotizar />} />
+            <Route path="ampliaciones" element={<Ampliaciones />} />
+            <Route path="servicios" element={<Servicios />} />
+            <Route path="contacto" element={<Contacto />} />
+          </Route>
+        </Routes>
+
+        <Whatsapp />
+      </BrowserRouter>
+    </>
   );
 }
 
