@@ -7,16 +7,43 @@ Sitio web informativo y profesional desarrollado para **Constructora Navarro**, 
 ## Tecnologías utilizadas
 
 ### Frontend
-- React (con Vite)
+- React 18(con Vite)
 - Tailwind CSS
 - Lucide React (íconos)
 - Swiper.js (carruseles)
+- Javascript (ES6+)
+- Hooks personalizados
+- Imágenes Optimizadas (webp)
+- SEO On-page
 
 ### Backend
 - Node.js + Express
 - Nodemailer (envío de correos)
 - dotenv (manejo seguro de variables de entorno)
 - Mailtrap (para pruebas de email)
+
+---
+
+## SEO aplicado
+
+- Metatags dinámicos por página
+- Open Graph (og:title, og:description, og:image)
+- `robots.txt`
+- `sitemap.xml`
+- Imágenes optimizadas en formato WebP
+- Rutas semánticas y amigables
+- Headings estructurados correctamente (H1–H3)
+
+---
+
+# Funcionalidades destacadas
+
+- Modal dinámico para visualización de servicios y proyectos
+- Galerías de imágenes con zoom
+- Navegación SPA con React Router
+- Diseño responsive (mobile-first)
+- Componentes reutilizables
+- Hook personalizado `useModal`
 
 ---
 
@@ -35,7 +62,6 @@ constructora-navarro/
 │   ├── routes/
 │   ├── controllers/
 │   ├── package.json
-│   └── .env  (no se sube)
 │
 └── .gitignore
 ```

@@ -234,3 +234,11 @@ img.LogoNavarro2 {
   animation: fadeOut 0.5s ease-in-out 3.5s forwards;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
