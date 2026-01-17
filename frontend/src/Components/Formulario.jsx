@@ -20,7 +20,7 @@ function Formulario() {
     const obtenerOpciones = async () => {
       try {
         const respuesta = await fetch(
-          "http://localhost:4000/api/data/opciones"
+          "/api/data/opciones"
         );
         const data = await respuesta.json();
 
@@ -67,7 +67,7 @@ function Formulario() {
     }
 
     try {
-      const respuesta = await fetch("http://localhost:4000/api/form/send", {
+      const respuesta = await fetch("http://constructora-navarro.onrender.com/api/form/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

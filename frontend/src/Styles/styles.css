@@ -1,9 +1,9 @@
 img.LogoNavarro2 {
-  width: 200px;           /* ajusta el tamaño a lo que necesites */
-  height: 200px;          /* debe ser igual al ancho */
-  border-radius: 50%;     /* recorta la imagen en forma circular */
-  object-fit: cover;      /* asegura que la imagen se mantenga proporcionada */
-  margin: 0 auto;         /* opcional: centra horizontalmente */
+  width: 200px; /* ajusta el tamaño a lo que necesites */
+  height: 200px; /* debe ser igual al ancho */
+  border-radius: 50%; /* recorta la imagen en forma circular */
+  object-fit: cover; /* asegura que la imagen se mantenga proporcionada */
+  margin: 0 auto; /* opcional: centra horizontalmente */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* opcional: sombra elegante */
 }
 
@@ -123,7 +123,6 @@ img.LogoNavarro2 {
   gap: 2rem;
 }
 
-
 @media (min-width: 640px) {
   .qs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -142,7 +141,10 @@ img.LogoNavarro2 {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  transition: border 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    border 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .qs-card:hover {
@@ -178,11 +180,13 @@ img.LogoNavarro2 {
   box-sizing: border-box;
   background-color: #fff;
   transform: scale(1);
-  transition: transform 0.5s ease-out; 
+  transition: transform 0.5s ease-out;
 }
 
-.qs-card:hover .qs-card-body {
-  transform: scale(1.03);
+@media (hover: hover) {
+  .qs-card:hover .qs-card-body {
+    transform: scale(1.03);
+  }
 }
 
 .qs-card-body p {
@@ -190,13 +194,12 @@ img.LogoNavarro2 {
   line-height: 1.6;
   margin-bottom: 0.75rem;
   color: #111;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
 
 .qs-card:hover .qs-card-body p {
   color: #222;
 }
-
 
 @media (min-width: 640px) {
   .qs-card-body p {
@@ -226,8 +229,13 @@ img.LogoNavarro2 {
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; transform: translateY(-5px); }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
 }
 .alerta {
   transition: all 0.3s ease-in-out;
@@ -241,4 +249,59 @@ img.LogoNavarro2 {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ================= MOBILE FIXES ================= */
+
+@media (max-width: 480px) {
+  img.LogoNavarro2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .qs-container {
+    padding: 2rem 0;
+    background-attachment: scroll;
+  }
+
+  .qs-header {
+    padding: 1.5rem 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .qs-title-box {
+    padding: 0.5rem 1rem;
+  }
+
+  .qs-title-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .qs-title-box p {
+    font-size: 1rem;
+  }
+
+  .qs-grid {
+    padding: 1.5rem 0.5rem;
+    gap: 1.25rem;
+  }
+
+  .qs-card-img {
+    height: 180px;
+  }
+
+  .qs-card-body {
+    padding: 1rem 0.75rem;
+  }
+
+  .qs-card-body p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .qs-card:hover {
+    transform: none;
+  }
 }
